@@ -9,7 +9,6 @@ import Controls from './Controls';
 //     render(<Controls/>);
 //   })
 
-test
 
 test('it renders correctly', () => {
     expect(render(<Controls />)).toMatchSnapshot();
