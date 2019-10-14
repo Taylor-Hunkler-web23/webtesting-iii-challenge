@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, fireEvent } from "@testing-library/react"
 import Display from './Display';
-
+import '@testing-library/jest-dom/extend-expect' 
 
 test('it renders correctly', () => {
     expect(render(<Display />)).toMatchSnapshot();
@@ -35,3 +35,5 @@ test('when open use the green-led class', () => {
     expect((gateOpen.classList.contains('green-led')))
 
 });
+
+
