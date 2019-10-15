@@ -68,3 +68,19 @@ test('the locked toggle button is disabled if the gate is open', () => {
 
 });
 
+
+
+test('button click changes lock state', () => {
+    const toggleLockMock = jest.fn();
+    const { getByText } = render(<Controls toggleLocked={toggleLockMock} />);
+
+
+
+    fireEvent.click(getByText(/lock/i));
+    expect(toggleLockMock).toBeTruthy();
+
+
+
+
+})
+
