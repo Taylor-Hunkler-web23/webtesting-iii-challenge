@@ -34,14 +34,7 @@ test('Displays if gate close', () => {
 })
 
 
-test('if gate is locked, close button disabled', () => {
-    const { getByText } = render(<Controls locked={true} />);
 
-
-
-    expect(getByText(/close/i)).toBeFalsy;
-
-})
 
 
 test('button click closes gate', () => {
@@ -60,7 +53,8 @@ test('button click closes gate', () => {
 
 
 
-test('the locked toggle button is disabled if the gate is open', () => {
+
+test('the closed toggle button is disabled if the gate is locked', () => {
     const {getByText} = render(<Controls locked={true}  />);
 
     expect(getByText(/close/i)).toBeDisabled
@@ -68,9 +62,9 @@ test('the locked toggle button is disabled if the gate is open', () => {
 });
 
 test('the locked toggle button is disabled if the gate is open', () => {
-    const {getByText} = render(<Controls locked={true}  />);
+    const {getByText} = render(<Controls closed={false}  />);
 
-    expect(getByText(/close/i)).toBeDisabled
+    expect(getByText(/lock/i)).toBeDisabled
 
 });
 
