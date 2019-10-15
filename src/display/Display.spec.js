@@ -27,3 +27,19 @@ test('when open use the green-led', () => {
 
 });
 
+
+
+test('displays Locked if the locked prop is true', () => {
+    const {getByText} = render(<Display locked={true}  />);
+  const locked = getByText (/locked/i);
+    expect(locked).toBeTruthy
+
+});
+
+
+test('displays Closed if the closed prop is true', () => {
+    const {getByText} = render(<Display closed={true}  />);
+  const isClosed = getByText (/closed/i);
+    expect(isClosed).toBeTruthy
+
+});
